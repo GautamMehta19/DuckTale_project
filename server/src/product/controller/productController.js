@@ -16,7 +16,7 @@ const createProduct = async (req, res) => {
             data.discount = 0
         }
         if (discount) {
-            if (discount > price) {
+            if (Number(discount) > Number(price)) {
                 return res.status(400).send({
                     status: false,
                     message: 'discount amount not be greater then the price'
